@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Tiny Dungeon｜迷宮勇者</title>
+  <meta name="description" content="A tiny turn-based RPG. Vanilla JS + Canvas 2D. Offline PWA.">
+  <meta name="theme-color" content="#14101f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #0b0912;
+      display: flex; align-items: center; justify-content: center; overflow: hidden; font-family: monospace; }
+    canvas { display: block; width: min(100vw, 75vh); height: auto; image-rendering: pixelated;
+      touch-action: none; border-radius: 8px; box-shadow: 0 0 40px #000; }
+  </style>
+</head>
+<body>
+  <canvas id="cv" width="480" height="640"></canvas>
+  <script src="game.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+    }
+  </script>
+</body>
+</html>
